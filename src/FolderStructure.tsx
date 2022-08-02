@@ -33,11 +33,11 @@ let link = (name: string, link: string): Link => ({ type: "link", name, link })
 export const rootFolder = folder("root", [
   file(
     "about",
-    "Hi! Welcome to my terminal ✨ I'm Nicole, and I am a self-taught frontend engineer. I love to build beautiful, performant web applications with clean UIs.   Check out the tech I ♥ by typing ‘stack’"
+    "Hi! Welcome to my terminal ✨ I'm Nicole, and I am a frontend software engineer. I love to build beautiful, intuitive web applications with clean UIs.  Check out my favorite technologies by typing `skills`. Or `cd` into the `links` folder to see more info"
   ),
   file(
-    "stack",
-    "TypeScript \xa0\xa0\xa0\n React \xa0\xa0\xa0 JavaScript(ES6+)\xa0\xa0\xa0 Express \xa0\xa0\xa0 Node.js  SCSS \xa0\xa0\xa0 Styled Components \xa0\xa0 GraphQL PostgreSQL \xa0\xa0\xa0 RESTful APIs"
+    "skills",
+    "TypeScript \xa0\xa0\xa0\n React \xa0\xa0\xa0 JavaScript(ES6+)\xa0\xa0\xa0 Express \xa0\xa0\xa0 Node.js  SCSS \xa0\xa0\xa0 Styled Components \xa0\xa0\xa0 GraphQL \xa0\xa0\xa0 PostgreSQL \xa0\xa0\xa0 RESTful APIs"
   ),
   folder("links", [
     link("github", "https://github.com/nicolespicymayoo"),
