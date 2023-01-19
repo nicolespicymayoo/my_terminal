@@ -199,7 +199,7 @@ const App: React.SFC = () => {
         return child.name == folderName
       })
       if (!folder || folder.type !== "folder") {
-        addNewHistoryItem("No directory found:" + folderName)
+        addNewHistoryItem("No directory found: " + folderName)
         return
       }
       setCurrStack([...currStack, folder])
@@ -216,7 +216,7 @@ const App: React.SFC = () => {
       .join("/")
 
   const toggleTheme = () => {
-    if (theme == "light") {
+    if (theme === "light") {
       setTheme("dark")
     } else setTheme("light")
   }
