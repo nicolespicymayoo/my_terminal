@@ -30,7 +30,7 @@ const App: React.SFC = () => {
   const terminalEl = useRef<DivEl>(null)
   const scrollableHistoryEl = useRef<DivEl>(null)
   const currFolder = currStack[currStack.length - 1]
-  let isInputSticky = false
+  const isInputSticky = useRef<boolean>(false)
   const [autocompleteArr, setAutocompleteArr] = useState<Array<string>>([])
   // initialTheme is a function so it is only run on the component's initial mount
   let getInitialTheme: () => "dark" | "light" = () => {
@@ -58,7 +58,7 @@ const App: React.SFC = () => {
 
   if (terminalEl.current && scrollableHistoryEl.current) {
     if (scrollableHistoryEl.current.scrollHeight > terminalEl.current.clientHeight - 30) {
-      isInputSticky = true
+      isInputSticky.current = true
     }
   }
 
@@ -96,7 +96,7 @@ const App: React.SFC = () => {
       return
     }
     if (command == "clear") {
-      isInputSticky = false
+      isInputSticky.current = false
       addNewHistoryItem(null)
       let clearedHistory = history.map(item => ({ ...item, cleared: true }))
       setHistory(clearedHistory)
@@ -234,9 +234,16 @@ const App: React.SFC = () => {
       <div className="toggle-theme-container">{ThemeSlider(theme, toggleTheme)}</div>
       <div className="terminal-wrapper">
         <div className={theme == "dark" ? "terminal-dark" : "terminal"} onClick={focusOnInputEl} ref={terminalEl}>
-          <div className="terminal-header">Nicole's Terminal</div>
+          <div className="terminal-header">
+            <div className='terminal-header-buttons-container'>
+              <div className="terminal-header-button red"/>
+              <div className="terminal-header-button yellow"/>
+              <div className="terminal-header-button green"/>
+            </div>
+            <div className="terminal-header-title">Nicole's Terminal</div>
+          </div>
           <div className="content-wrapper" ref={scrollableHistoryEl}>
-            <div className={`terminal-content ${isInputSticky ? "sticky" : ""}`}>
+            <div className={`terminal-content ${isInputSticky.current ? "sticky" : ""}`}>
               {history
                 .filter(item => item.cleared == false)
                 .map(item => (
@@ -270,20 +277,27 @@ const App: React.SFC = () => {
       </div>
       <div className="help-container">
         <div className={hoveringHelp ? "help-content" : "help-content-hidden"}>
-          <div className="help-title">need help?</div>
+          <div className="help-title">Need help?</div>
           <ul>
             <li className="help-text">
-              to list files, type "<span className="monospace">ls</span>"
+              <div className="help-text-bullet">{'\u2022 '}</div
+              ><div>Type '<span className="monospace">ls</span>' to see files</div>
             </li>
             <li className="help-text">
-              items in <b>bold</b> are folders
+              <div className="help-text-bullet">{'\u2022 '}</div>
+              <div>Items in <b> bold </b> are folders</div>
             </li>
             <li className="help-text">
-              to see contents of folders, type "
+              <div className="help-text-bullet">{'\u2022 '}</div>
+              <div>Type '
               <span className="monospace">
                 cd <i>file_name</i>
               </span>{" "}
-              "
+              ' to see folder contents
+              </div>
+            </li>
+            <li className="help-text">
+            <div className="help-text-bullet">{'\u2022 '}</div>Type 'clear' to clear history 
             </li>
           </ul>
         </div>
