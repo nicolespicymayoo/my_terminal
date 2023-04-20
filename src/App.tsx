@@ -160,7 +160,7 @@ const App: React.SFC = () => {
     }
   }
 
-  // checks if user is scrolling through history, or is user pressed tab for autocomplete
+  // checks if user is scrolling through history, or if user pressed tab for autocomplete
   const checkUserScrollAndTab = (e: React.KeyboardEvent<HTMLInputElement>) => {
     checkUserTab(e)
     if (e.keyCode == KeyCodes.UP && scrollIndex > -1) {

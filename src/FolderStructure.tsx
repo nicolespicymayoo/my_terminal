@@ -34,33 +34,31 @@ const skills = [
   'TypeScript', 
   'JavaScript(ES6+)',
   'React',
-  'CSS/SCSS',
   'Redux',
+  'CSS/SCSS',
   'Styled Components',
   'GraphQL',
   'Apollo Client',
+  'Next.js',
   'Node.js',
   'PostgreSQL',
-  'Next.js',
-  'RESTful APIs',
-  'Git'
 ]
 
-const skillsStr = skills.toString().split(',').join('\n')
+const skillsStringWithLineBreaks = skills.toString().split(',').join('<br />')
 
 export const rootFolder = folder("root", [
   file(
     "about",
-    "Hi! Welcome to my terminal ✨ I'm Nicole, and I am a frontend software engineer. I love to build beautiful, intuitive web applications with clean UIs.  Check out my favorite technologies by typing `skills`. Or `cd` into the `links` folder to see more info"
+    "Hi! Welcome to my terminal ✨ I'm Nicole, a frontend software engineer. I love to build modern, aesthetic, delightful user interfaces. I have 5 years experience building web applications with React and TypeScript. Check out my favorite technologies by typing `skills`. Or `cd` into the `links` folder to see more info"
   ),
   file(
     "skills",
-    skillsStr
+    skillsStringWithLineBreaks
   ),
   folder("links", [
     link("github", "https://github.com/nicolespicymayoo"),
     link("linkedin", "https://www.linkedin.com/in/nicolemayo/"),
-    link("resume", "https://docs.google.com/document/d/e/2PACX-1vT1T4hhgyQ-Q0RDzXt3nAPv5AhX09cDaf3t3SrHUTwJJ1nmZyBD3D1b6SU8MVo8mewMLrGtnLpEqIs2/pub"),
+    link("resumé", "https://docs.google.com/document/d/e/2PACX-1vT1T4hhgyQ-Q0RDzXt3nAPv5AhX09cDaf3t3SrHUTwJJ1nmZyBD3D1b6SU8MVo8mewMLrGtnLpEqIs2/pub"),
     link("twitter", "https://twitter.com/spicyasianmayo?lang=en")
   ]),
   file("email", " Shoot me an email at hellonicolemayo@gmail.com. I'd love to chat!")
