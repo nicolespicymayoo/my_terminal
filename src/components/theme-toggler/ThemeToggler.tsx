@@ -1,7 +1,7 @@
 import React from 'react'
-import './ThemeSlider.scss'
+import './ThemeToggler.scss'
 
-export const ThemeSlider = (theme: 'dark' | 'light', toggleTheme: () => void) => {
+export const ThemeToggler = (theme: 'dark' | 'light', toggleTheme: () => void) => {
   return <div className='toggle-theme'>
       <div className={`theme-option-${theme}`}>light</div>
         <input className="checkbox" type="checkbox" id="switch" checked={theme === 'dark'}/>
