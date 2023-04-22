@@ -177,3 +177,15 @@ body {
   color: white;
   line-height: 1.32em;
 }
+
+@media only screen and (max-width: 550px) {
+  .terminal {
+    width: 80%;
+    height: 300px;
+    font-size: 13px;
+  }
+  .terminal-content {
+    font-size: 13px;
+    height: 98%;
+  }
+}
