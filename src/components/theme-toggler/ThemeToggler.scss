@@ -3,15 +3,6 @@
   flex-direction: row;
 }
 
-.theme-option-light {
-  font-size: 12px;
-  color: rgba(40,42,53,0.4);
-}
-.theme-option-dark {
-  @extend .theme-option-light;
-  color: rgba(255, 255, 255, 0.4);
-}
-
 .checkbox {
   height: 0;
   width: 0;
@@ -29,7 +20,7 @@
   border-radius: 100px;
   position: relative;
   text-align: right;
-  margin: -1px 12px;
+  margin: 0px 12px;
 }
 
 .slider-dark {

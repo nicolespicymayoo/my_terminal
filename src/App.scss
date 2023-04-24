@@ -76,41 +76,14 @@ body {
   margin: auto;
 }
 
-.terminal-header-buttons-container {
-  top: 20px;
-  left: 16px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: absolute;
-}
-
-.terminal-header-button {
-  height: 10px;
-  width: 10px;
-  border-radius: 100%;
-  margin-right: 8px;
-}
-
-.red {
-  background-color: rgb(237,106,95);
-  border: 1px solid rgb(136, 57, 50);
-}
-
-.yellow {
-  background-color: rgb(245,191,79);
-  border: 1px solid rgb(160, 123, 50);
-}
-
-.green {
-  background-color: rgb(99,199,86);
-  border: 1px solid rgb(63, 122, 52);
-}
-
 .content-wrapper {
   height: 93%;
   overflow: scroll;
   padding-bottom: 10px;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .terminal-content {
